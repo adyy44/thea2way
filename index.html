@@ -7,19 +7,19 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Mono:wght@300;400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #f7f4ee;
-    --black: #0d0d0d;
-    --gold: #b8932a;
-    --gold-light: #e8c96a;
-    --mid: #888070;
-    --cream: #ede8dc;
+    --bg: #0d0d0d;
+    --text: #f0ede6;
+    --red: #c8392b;
+    --red-light: #e05a4a;
+    --mid: #888;
+    --surface: #161616;
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
 
   body {
     background: var(--bg);
-    color: var(--black);
+    color: var(--text);
     font-family: 'DM Sans', sans-serif;
     font-weight: 300;
     overflow-x: hidden;
@@ -51,7 +51,7 @@
     letter-spacing: 3px;
     padding: 8px 16px;
     border: 1px solid #333;
-    background: var(--black);
+    background: var(--surface);
     color: #555;
     cursor: pointer;
     transition: all 0.2s;
@@ -59,9 +59,9 @@
   }
 
   .lang-btn.active {
-    background: var(--gold);
-    color: var(--black);
-    border-color: var(--gold);
+    background: var(--red);
+    color: #fff;
+    border-color: var(--red);
   }
 
   /* ── HEADER ── */
@@ -71,7 +71,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background: var(--black);
+    background: var(--surface);
     position: relative;
     overflow: hidden;
   }
@@ -95,7 +95,7 @@
     font-family: 'DM Mono', monospace;
     font-size: 11px;
     letter-spacing: 5px;
-    color: var(--gold-light);
+    color: var(--red-light);
     text-transform: uppercase;
     margin-bottom: 32px;
     opacity: 0;
@@ -106,7 +106,7 @@
     font-family: 'Playfair Display', serif;
     font-size: clamp(56px, 9vw, 130px);
     font-weight: 900;
-    color: #f7f4ee;
+    color: #f0ede6;
     line-height: 0.9;
     letter-spacing: -2px;
     margin-bottom: 40px;
@@ -114,11 +114,11 @@
     animation: fadeUp 0.8s ease forwards 0.4s;
   }
 
-  .header h1 em { font-style: italic; color: var(--gold-light); }
+  .header h1 em { font-style: italic; color: var(--red-light); }
 
   .header-sub {
     font-size: 15px;
-    color: #777;
+    color: #666;
     max-width: 420px;
     line-height: 1.8;
     opacity: 0;
@@ -142,11 +142,11 @@
     line-height: 2;
   }
 
-  .header-meta span { color: var(--gold-light); }
+  .header-meta span { color: var(--red-light); }
 
   /* ── STAT BAR ── */
   .stat-bar {
-    background: var(--gold);
+    background: var(--red);
     padding: 80px 64px;
     display: flex;
     align-items: center;
@@ -168,7 +168,7 @@
     font-family: 'Playfair Display', serif;
     font-size: clamp(80px, 13vw, 180px);
     font-weight: 900;
-    color: var(--black);
+    color: #fff;
     line-height: 1;
     flex-shrink: 0;
   }
@@ -179,14 +179,14 @@
     font-family: 'Playfair Display', serif;
     font-size: 32px;
     font-weight: 700;
-    color: var(--black);
+    color: #fff;
     margin-bottom: 12px;
     line-height: 1.2;
   }
 
   .stat-bar-text p {
     font-size: 14px;
-    color: rgba(0,0,0,0.55);
+    color: rgba(255,255,255,0.65);
     max-width: 380px;
     line-height: 1.7;
   }
@@ -198,7 +198,7 @@
     font-family: 'DM Mono', monospace;
     font-size: 10px;
     letter-spacing: 5px;
-    color: var(--gold);
+    color: var(--red);
     text-transform: uppercase;
     margin-bottom: 12px;
   }
@@ -211,12 +211,12 @@
     margin-bottom: 48px;
   }
 
-  .s-title em { font-style: italic; color: var(--gold); }
+  .s-title em { font-style: italic; color: var(--red); }
 
   /* ── NUMBERS ── */
-  .stats-section { background: var(--black); }
-  .stats-section .s-label { color: var(--gold); }
-  .stats-section .s-title { color: #f7f4ee; }
+  .stats-section { background: #111; }
+  .stats-section .s-label { color: var(--red); }
+  .stats-section .s-title { color: #f0ede6; }
 
   .stats-grid {
     display: grid;
@@ -238,12 +238,12 @@
     font-family: 'Playfair Display', serif;
     font-size: 52px;
     font-weight: 700;
-    color: #f7f4ee;
+    color: #f0ede6;
     line-height: 1;
     margin-bottom: 10px;
   }
 
-  .stat-n.gold { color: var(--gold-light); }
+  .stat-n.gold { color: var(--red-light); }
 
   .stat-l {
     font-family: 'DM Mono', monospace;
@@ -255,7 +255,7 @@
   }
 
   /* ── CLIENTS ── */
-  .clients-section { background: var(--bg); }
+  .clients-section { background: var(--surface); }
 
   .clients-grid {
     display: grid;
@@ -264,9 +264,9 @@
   }
 
   .client-card {
-    border: 1px solid #ddd8cc;
+    border: 1px solid #222;
     padding: 40px 32px;
-    background: var(--cream);
+    background: #161616;
     transition: transform 0.3s, box-shadow 0.3s;
     position: relative;
     overflow: hidden;
@@ -277,36 +277,36 @@
     position: absolute;
     bottom: 0; left: 0;
     height: 3px; width: 0;
-    background: var(--gold);
+    background: var(--red);
     transition: width 0.4s ease;
   }
 
-  .client-card:hover { transform: translateY(-4px); box-shadow: 0 16px 48px rgba(0,0,0,0.08); }
+  .client-card:hover { transform: translateY(-4px); box-shadow: 0 16px 48px rgba(0,0,0,0.4); }
   .client-card:hover::before { width: 100%; }
 
-  .client-card.featured { background: var(--black); border-color: var(--gold); }
-  .client-card.featured::before { background: var(--gold-light); }
+  .client-card.featured { background: var(--surface); border-color: var(--red); }
+  .client-card.featured::before { background: var(--red-light); }
 
   .client-flag {
     font-family: 'DM Mono', monospace;
     font-size: 10px;
     letter-spacing: 3px;
-    color: var(--gold);
+    color: var(--red);
     text-transform: uppercase;
     margin-bottom: 8px;
   }
 
-  .client-card.featured .client-flag { color: var(--gold-light); }
+  .client-card.featured .client-flag { color: var(--red-light); }
 
   .client-name {
     font-family: 'Playfair Display', serif;
     font-size: 32px;
     font-weight: 700;
     margin-bottom: 6px;
-    color: var(--black);
+    color: var(--text);
   }
 
-  .client-card.featured .client-name { color: #f7f4ee; }
+  .client-card.featured .client-name { color: #f0ede6; }
 
   .client-location {
     font-family: 'DM Mono', monospace;
@@ -320,12 +320,12 @@
     font-family: 'Playfair Display', serif;
     font-size: 48px;
     font-weight: 900;
-    color: var(--gold);
+    color: var(--red);
     line-height: 1;
     margin-bottom: 4px;
   }
 
-  .client-card.featured .client-stat-big { color: var(--gold-light); }
+  .client-card.featured .client-stat-big { color: var(--red-light); }
 
   .client-stat-label {
     font-family: 'DM Mono', monospace;
@@ -336,7 +336,7 @@
     margin-bottom: 24px;
   }
 
-  .client-desc { font-size: 13px; color: #777; line-height: 1.7; }
+  .client-desc { font-size: 13px; color: #666; line-height: 1.7; }
   .client-card.featured .client-desc { color: #666; }
 
   .client-role {
@@ -346,12 +346,12 @@
     font-size: 9px;
     letter-spacing: 2px;
     text-transform: uppercase;
-    background: var(--gold);
-    color: var(--black);
+    background: var(--red);
+    color: #fff;
     padding: 4px 10px;
   }
 
-  .client-card.featured .client-role { background: var(--gold-light); }
+  .client-card.featured .client-role { background: var(--red-light); }
 
   .client-logos {
     display: flex;
@@ -362,11 +362,11 @@
     font-family: 'DM Mono', monospace;
     font-size: 10px;
     letter-spacing: 1px;
-    color: var(--black);
+    color: #888;
   }
 
   /* ── WHAT I DO ── */
-  .what-section { background: var(--cream); border-top: 1px solid #ddd8cc; }
+  .what-section { background: #161616; border-top: 1px solid #1a1a1a; }
 
   .what-grid {
     display: grid;
@@ -375,13 +375,13 @@
     margin-top: 64px;
   }
 
-  .what-item { border-top: 2px solid var(--gold); padding-top: 28px; }
+  .what-item { border-top: 2px solid var(--red); padding-top: 28px; }
 
   .what-num {
     font-family: 'DM Mono', monospace;
     font-size: 10px;
     letter-spacing: 3px;
-    color: var(--gold);
+    color: var(--red);
     margin-bottom: 14px;
   }
 
@@ -390,13 +390,14 @@
     font-size: 26px;
     font-weight: 700;
     margin-bottom: 12px;
+    color: var(--text);
   }
 
-  .what-desc { font-size: 13px; color: #777; line-height: 1.8; }
+  .what-desc { font-size: 13px; color: #666; line-height: 1.8; }
 
   /* ── CTA ── */
   .cta-section {
-    background: var(--black);
+    background: var(--surface);
     text-align: center;
     position: relative;
     overflow: hidden;
@@ -415,19 +416,19 @@
     letter-spacing: -30px;
   }
 
-  .cta-section .s-label { color: var(--gold); }
+  .cta-section .s-label { color: var(--red); }
 
   .cta-section h2 {
     font-family: 'Playfair Display', serif;
     font-size: clamp(48px, 8vw, 100px);
     font-weight: 900;
-    color: #f7f4ee;
+    color: #f0ede6;
     line-height: 0.95;
     letter-spacing: -2px;
     margin-bottom: 48px;
   }
 
-  .cta-section h2 em { font-style: italic; color: var(--gold-light); }
+  .cta-section h2 em { font-style: italic; color: var(--red-light); }
 
   .cta-contact {
     font-family: 'DM Mono', monospace;
@@ -437,7 +438,7 @@
     line-height: 2.4;
   }
 
-  .cta-contact a { color: var(--gold-light); text-decoration: none; }
+  .cta-contact a { color: var(--red-light); text-decoration: none; }
 
   /* ── FOOTER ── */
   footer {
@@ -453,11 +454,11 @@
     font-family: 'Playfair Display', serif;
     font-size: 22px;
     font-weight: 900;
-    color: #f7f4ee;
+    color: #f0ede6;
     letter-spacing: 8px;
   }
 
-  .wordmark span { color: var(--gold-light); }
+  .wordmark span { color: var(--red-light); }
 
   footer p {
     font-family: 'DM Mono', monospace;
@@ -471,17 +472,7 @@
     to { opacity: 1; transform: translateY(0); }
   }
 
-  /* scroll reveal */
-  .reveal {
-    opacity: 0;
-    transform: translateY(32px);
-    transition: opacity 0.7s ease, transform 0.7s ease;
-  }
 
-  .reveal.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
 
   @media (max-width: 768px) {
     .header, section, footer { padding: 60px 24px; }
@@ -495,45 +486,38 @@
     .lang-bar { top: 16px; right: 16px; }
   }
 
-  /* lang switching */
-  [data-lang="it"] { display: none; }
-  body.lang-it [data-lang="en"] { display: none; }
-  body.lang-it [data-lang="it"] { display: block; }
-  body.lang-it span[data-lang="it"] { display: inline; }
-  body.lang-it span[data-lang="en"] { display: none; }
-  span[data-lang="it"] { display: none; }
+  /* lang switching - IT default */
+  [data-lang="en"] { display: none; }
+  [data-lang="it"] { display: block; }
+  span[data-lang="en"] { display: none; }
+  span[data-lang="it"] { display: inline; }
+  body.lang-en [data-lang="it"] { display: none; }
+  body.lang-en [data-lang="en"] { display: block; }
+  body.lang-en span[data-lang="it"] { display: none; }
+  body.lang-en span[data-lang="en"] { display: inline; }
 </style>
 </head>
 <body>
 
 <div class="lang-bar">
-  <button class="lang-btn active" onclick="setLang('en')">EN</button>
-  <button class="lang-btn" onclick="setLang('it')">IT</button>
+  <button class="lang-btn" onclick="setLang('en')">EN</button>
+  <button class="lang-btn active" onclick="setLang('it')">IT</button>
 </div>
 
 <!-- HEADER -->
 <section class="header">
-  <div class="header-label">
-    <span data-lang="en">Portfolio · Case Studies · 2022–Present</span>
-    <span data-lang="it">Portfolio · Casi Studio · 2022–Presente</span>
-  </div>
   <h1>
     <span data-lang="en">Content<br>that <em>moves.</em></span>
     <span data-lang="it">Contenuti<br>che <em>muovono.</em></span>
   </h1>
-  <p class="header-sub">
-    <span data-lang="en">Creative strategy, video editing and visual content — for brands that want to be remembered.</span>
-    <span data-lang="it">Strategia creativa, video editing e contenuti visivi — per brand che vogliono essere ricordati.</span>
-  </p>
   <div class="header-meta">
     <p><span data-lang="en">Based in</span><span data-lang="it">Base</span>: <span>Milan, Italy</span></p>
-    <p><span data-lang="en">Clients</span><span data-lang="it">Clienti</span>: <span>IT · NL · FI</span></p>
-    <p><a href="mailto:khaliladel44@gmail.com" style="color:var(--gold-light);text-decoration:none;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:2px;">khaliladel44@gmail.com</a></p>
+    <p><a href="/cdn-cgi/l/email-protection#f19a99909d989d9095949dc5c5b1969c90989ddf929e9c" style="color:var(--red-light);text-decoration:none;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:2px;"><span class="__cf_email__" data-cfemail="d7bcbfb6bbbebbb6b3b2bbe3e397b0bab6bebbf9b4b8ba">[email&#160;protected]</span></a></p>
   </div>
 </section>
 
 <!-- STAT BAR -->
-<div class="stat-bar reveal">
+<div class="stat-bar">
   <div class="big-num">59<sup>M+</sup></div>
   <div class="stat-bar-text">
     <h2>
@@ -548,7 +532,7 @@
 </div>
 
 <!-- NUMBERS -->
-<section class="stats-section reveal">
+<section class="stats-section">
   <div class="s-label">
     <span data-lang="en">By the numbers</span>
     <span data-lang="it">I numeri</span>
@@ -570,15 +554,12 @@
       <div class="stat-n">3.3M</div>
       <div class="stat-l"><span data-lang="en">Views · third best</span><span data-lang="it">Views · terzo migliore</span></div>
     </div>
-    <div class="stat-cell">
-      <div class="stat-n">3</div>
-      <div class="stat-l"><span data-lang="en">Countries · clients served</span><span data-lang="it">Paesi · clienti serviti</span></div>
-    </div>
+    <div class="stat-cell"><div class="stat-n">+5</div><div class="stat-l"><span data-lang="en">Countries · clients served</span><span data-lang="it">Paesi · clienti serviti</span></div></div>
   </div>
 </section>
 
 <!-- CLIENTS -->
-<section class="clients-section reveal">
+<section class="clients-section">
   <div class="s-label">
     <span data-lang="en">Selected clients</span>
     <span data-lang="it">Clienti selezionati</span>
@@ -635,7 +616,7 @@
 </section>
 
 <!-- WHAT I DO -->
-<section class="what-section reveal">
+<section class="what-section">
   <div class="s-label">
     <span data-lang="en">Scope of work</span>
     <span data-lang="it">Cosa faccio</span>
@@ -681,7 +662,7 @@
 </section>
 
 <!-- CTA -->
-<section class="cta-section reveal">
+<section class="cta-section">
   <div class="s-label">
     <span data-lang="en">Let's work together</span>
     <span data-lang="it">Lavoriamo insieme</span>
@@ -692,7 +673,7 @@
   </h2>
   <div class="cta-contact">
     <p><a href="https://adyy.it" target="_blank">adyy.it</a></p>
-    <p><a href="mailto:khaliladel44@gmail.com">khaliladel44@gmail.com</a></p>
+    <p><a href="/cdn-cgi/l/email-protection#f9929198959095989d9c95cdcdb99e94989095d79a9694"><span class="__cf_email__" data-cfemail="016a69606d686d6065646d353541666c60686d2f626e6c">[email&#160;protected]</span></a></p>
     <p>+39 371 339 0465</p>
     <p>Milan, Italy</p>
   </div>
@@ -700,28 +681,16 @@
 
 <footer>
   <div class="wordmark">ADYY<span>.</span></div>
-  <p>© 2025 · Milan · IT / NL / FI</p>
+  <p>© 2025 · Milan</p>
 </footer>
 
 <script>
   function setLang(lang) {
-    document.body.classList.toggle('lang-it', lang === 'it');
+    document.body.classList.toggle('lang-en', lang === 'en');
     document.querySelectorAll('.lang-btn').forEach(btn => {
-      btn.classList.toggle('active', btn.textContent === lang.toUpperCase());
+      btn.classList.toggle('active', btn.textContent.trim() === lang.toUpperCase());
     });
   }
-
-  // scroll reveal
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(el => {
-      if (el.isIntersecting) {
-        el.target.classList.add('visible');
-        observer.unobserve(el.target);
-      }
-    });
-  }, { threshold: 0.1 });
-
-  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 </script>
 
 </body>
